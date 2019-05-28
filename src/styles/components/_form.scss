@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    > * {
+        margin-bottom: $m-size;
+    }
+}
+.form > label {
+    flex: 0 0 100%;
+}
+.form > label > input {
+    float: right;
+}
+
+.form__error {
+    margin: 0 0 $m-size 0;
+    font-style: italic;
+}

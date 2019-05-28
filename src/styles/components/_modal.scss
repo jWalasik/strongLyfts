@@ -1,0 +1,25 @@
+.modal--container{
+    display: flex;
+    align-items: flex-end;
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+}
+.modal--window{
+    background-color: #fefefe;
+    padding: $l-size;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 300px;
+    width: 40%;
+    box-shadow: 10px 10px 5px black;
+    font-size: $font-size-large;
+    padding: $l-size;
+}
+.modal--window > button {
+    margin: $m-size;
+}
