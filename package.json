@@ -2,6 +2,7 @@
   "name": "strong-lyfts-app",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://elpaleniozord.github.io/strongLyfts/",
   "author": "Jacek Walasik",
   "license": "MIT",
   "scripts": {
@@ -10,7 +11,9 @@
     "dev-server": "webpack-dev-server",
     "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
     "start": "node server/server.js",
-    "heroku-postbuild": "yarn run build:prod"
+    "heroku-postbuild": "yarn run build:prod",
+    "predeploy": "yarn run build:dev",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -25,6 +28,7 @@
     "express": "4.15.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "firebase": "4.2.0",
+    "gh-pages": "^2.0.1",
     "history": "4.7.2",
     "live-server": "^1.2.0",
     "moment": "2.18.1",
