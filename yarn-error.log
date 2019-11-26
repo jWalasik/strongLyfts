@@ -2,7 +2,7 @@ Arguments:
   D:\node.js\node.exe C:\Users\elPaleniozord\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js init
 
 PATH: 
-  C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Boxstarter;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\WINDOWS\System32\OpenSSH\;D:\node.js\;C:\ProgramData\chocolatey\bin;C:\Users\elPaleniozord\AppData\Local\atom\bin;C:\Users\elPaleniozord\AppData\Local\Microsoft\WindowsApps;C:\Users\elPaleniozord\AppData\Local\GitHubDesktop\bin;;D:\Microsoft VS Code\bin;C:\Users\elPaleniozord\AppData\Roaming\npm;D:\heroku\bin
+  C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Boxstarter;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\WINDOWS\System32\OpenSSH\;D:\node.js\;C:\ProgramData\chocolatey\bin;;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;%SYSTEMROOT%\System32\OpenSSH\;C:\Users\elPaleniozord\AppData\Local\atom\bin;C:\Users\elPaleniozord\AppData\Local\Microsoft\WindowsApps;C:\Users\elPaleniozord\AppData\Local\GitHubDesktop\bin;;D:\Microsoft VS Code\bin;C:\Users\elPaleniozord\AppData\Roaming\npm;D:\heroku\bin;C:\Users\elPaleniozord\AppData\Local\Microsoft\WindowsApps
 
 Yarn version: 
   1.6.0
@@ -38,8 +38,7 @@ npm manifest:
       "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server",
       "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
-      "start": "node server/server.js",
-      "heroku-postbuild": "yarn run build:prod"
+      "start": "node server/server.js"
     },
     "dependencies": {
       "babel-cli": "6.24.1",
