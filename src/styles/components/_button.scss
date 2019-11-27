@@ -1,0 +1,47 @@
+.button {
+  background: $blue;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-size: $font-size-large;
+  font-weight: 300;
+  padding: $s-size;
+  text-decoration: none;
+  margin: auto;
+  min-width: 80px;
+}
+.button:disabled, button[disabled]{
+  color: $blue;
+  border: 3px solid $blue;
+}
+
+.button--link {
+  background: none;
+}
+
+.button--secondary {
+  background: #888888;
+}
+
+.button--finish {
+  display: block;
+  margin-top: $l-size;
+}
+.button--set {
+  height: $l-size;
+  width: $l-size;
+  color: $off-white;
+  font-size: $font-size-large;
+  box-sizing: border-box;
+  background-color: $off-white; 
+  border: 3px solid $light-grey;
+  border-radius: 50%;
+  margin: $m-size;
+}
+.button--set:hover {
+  border: 3px solid $blue;
+}
+.button--reset {
+  background: rgb(180, 58, 49)
+}
