@@ -11,7 +11,7 @@ export class WorkoutPage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            day: this.props.exercise && this.props.exercises[5].value % 2 === 0 ? 'B' : 'A',
+            day: this.props.session % 2 === 0 ? 'B' : 'A',
             modal: props.modal}
     }
     onConfirmation = () => {
@@ -33,16 +33,15 @@ export class WorkoutPage extends React.Component {
         }) 
     }
     render() {
-        
-        if(!this.props.exercises[5]) {
+        if(this.props.exercises.length < 5) {
             return <Redirect to='/settings' />
         }
-        const day = this.props.exercises[5].value % 2 === 0 ? 'B' : 'A'
+        const day = this.props.session.value % 2 === 0 ? 'B' : 'A'
 
         return (
             <div className='page-header'>
                 <div className='content-container'>
-                    <h1>Session {this.props.exercises[5].value}</h1>
+                    <h1>Session {this.props.session}</h1>
 
                     {this.props.exercises.map((exercise) => {                           
                         if(exercise.id !== 'session' && exercise.day !== day){                        
@@ -70,7 +69,8 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => {
     return {
-        exercises: state.exercises,
+        session: state.exercises.session,
+        exercises: state.exercises.exercises,
         modal: state.modal
     }
 }

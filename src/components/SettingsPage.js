@@ -7,8 +7,10 @@ import Portal from './Portal';
 import Modal from './Modal';
 
 export class SettingPage extends React.Component{
-    onSubmit = (exercises) => {
-        this.props.startEditWeights(exercises);
+    onSubmit = (exercises) => {        
+        const update = exercises
+        update.session = this.props.session ? this.props.session : 1
+        this.props.startEditWeights(update);
         this.props.history.push('/');
     }
     onConfirmation = () => {
@@ -32,9 +34,9 @@ export class SettingPage extends React.Component{
             <div className='page-header'>
                 <div className='content-container'>
                     <WeightForm 
-                    exercises={this.props.exercises}
-                    onSubmit={this.onSubmit}
-                    onReset={this.onReset}
+                        exercises={this.props.exercises.exercises}
+                        onSubmit={this.onSubmit}
+                        onReset={this.onReset}
                     />
                 </div>
                 <Portal>
@@ -55,6 +57,7 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => {
     return {
         exercises: state.exercises,
+        session: state.session,
         modal: state.modal
     }
 }

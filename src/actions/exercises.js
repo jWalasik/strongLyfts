@@ -1,5 +1,12 @@
 import database from '../firebase/firebase';
 
+export const addSession = (updates) => {
+    return {
+        type: 'ADD_SESSION',
+        updates
+    }
+}
+
 export const addWeights = (updates) => {
     return {
         type: 'ADD_WEIGHTS',
@@ -10,18 +17,27 @@ export const addWeights = (updates) => {
 export const startAddWeights = (updates, day) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        const newLoads = {
-            exercises:{}
-        };
+        const session = getState().exercises.session
+
         //filter sets A/B and session, increment accordingly
-        updates.map((exercise)=>{            
-            exercise.day!==day&&exercise.id!=='session' ? exercise.load +=loadInc(exercise.id) : exercise
-            exercise.id!=='session' ? newLoads.exercises[exercise.id] = exercise.load : newLoads.session = exercise.value+1
+        const weights = {}
+        const newState = updates.map(ex=>{
+            const newLoad = ex.day!==day ? ex.load +=loadInc(ex.id) : ex.load
+            weights[ex.id] = newLoad
+            ex.load = newLoad
+            return ex
         })
-        return database.ref(`users/${uid}/`).update(newLoads).then(()=>{
-            updates[5].value+=1
-            dispatch(addWeights(updates));
+        const promises = [
+            database.ref(`users/${uid}/exercises`).update(weights),
+            database.ref(`users/${uid}/`).update({session: session+1})
+        ]
+
+        return Promise.all([promises])
+        .then(values => {
+            dispatch(addWeights(newState))
+            dispatch(addSession(session+1))
         })
+        .catch(err=>console.log(err))
     }
 }
 
@@ -30,7 +46,7 @@ export const editWeights = (updates) => ({
     updates
 })
 
-export const startEditWeights = (updates) => {
+export const startEditWeights = (updates) => {    
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
         return database.ref(`users/${uid}/`).update(updates).then(()=>{
@@ -42,7 +58,6 @@ export const resetWeights = () => ({
     type:'RESET_WEIGHTS'
 })
 export const startResetWeights = () => {
-    console.log('reset')
     return (dispatch, getState) => {
         const uid = getState().auth.uid
         return database.ref(`users/${uid}/`).remove().then(()=>{
@@ -58,25 +73,28 @@ export const setWeights = (exercises) => ({
 export const startSetWeights = () => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        return database.ref(`users/${uid}/`).once('value').then((snapshot)=>{
-            const exercises = [];
-            snapshot.forEach((childSnapshot) => {
-                if(childSnapshot.key === "session"){
-                    exercises.push({id: childSnapshot.key, value: childSnapshot.val()})
-                } else {
-                    childSnapshot.forEach((exercise) => {
-                        exercises.push({
-                            id: exercise.key,
-                            load: exercise.val(),
-                            sets: exercise.key === "Deadlift" ? 1 : 5,
-                            day: sortDay(exercise.key)
-                        });
-                    })
-                    
-                }
-            });
-            dispatch(setWeights(exercises));
-        });
+
+        const session = database.ref(`users/${uid}/session/`).once('value').then((snapshot)=>snapshot.val())
+
+        const exercises = database.ref(`users/${uid}/exercises/`).once('value')
+            .then((snapshot)=>snapshot.val() ? snapshot.val() : [])
+            .then(data => Object.keys(data).map(exercise => {
+                    const values = {
+                        id: exercise,
+                        load: data[exercise],
+                        sets: exercise === 'Deadlift' ? 1 : 5,
+                        day: sortDay(exercise)
+                    }
+                    return values
+                })
+            ).catch(err=> err)
+        
+        return Promise.all([session, exercises]).then(values =>{
+            return dispatch(setWeights({
+                session: values[0] || 1,
+                exercises: values[1] || []
+            }))
+        })
     };
 };
 
