@@ -10,6 +10,7 @@ import {Redirect} from 'react-router-dom';
 export class WorkoutPage extends React.Component {
     constructor(props){
         super(props);
+        console.log(props)
         this.state = {
             day: this.props.session % 2 === 0 ? 'B' : 'A',
             modal: props.modal}
@@ -36,7 +37,6 @@ export class WorkoutPage extends React.Component {
         if(this.props.exercises.length < 5) {
             return <Redirect to='/settings' />
         }
-        const day = this.props.session.value % 2 === 0 ? 'B' : 'A'
 
         return (
             <div className='page-header'>
@@ -44,7 +44,7 @@ export class WorkoutPage extends React.Component {
                     <h1>Session {this.props.session}</h1>
 
                     {this.props.exercises.map((exercise) => {                           
-                        if(exercise.id !== 'session' && exercise.day !== day){                        
+                        if(exercise.day !== this.state.day){                        
                             return <Exercise className='exercise-item' key={exercise.id}{...exercise}/>
                         }                            
                     })

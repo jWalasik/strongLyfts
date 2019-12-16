@@ -106,6 +106,6 @@ const sortDay = (exercise) =>{
     } else return 'AB'
 }
 const loadInc = (name)=>{
-    if(name==='Deadlift') return 5
-    else return 2.5
+    if(name==='Deadlift') return 4
+    else return 2
 }
