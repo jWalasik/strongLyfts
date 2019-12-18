@@ -1,14 +1,14 @@
 # [strongLyfts](https://gentle-eyrie-84798.herokuapp.com/)
 
-Simple React application to assists during workout sessions, based on popular training routine 5x5
+Simple React application to assists during workout sessions, based on popular training routine 5x5.
 
 ## Getting Started
 
-Clone/download this repo then run following commands:
+Clone/download this repo then run following commands from :
 npm install
 npm dev-server
 
-If required you can find further information in installing section
+If required you can find further instructions below, at installing section.
 
 ### Prerequisites
 
@@ -34,22 +34,6 @@ $Firebase -
 
 $npm test
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
 $heroku - link github repo and setup env variables
@@ -62,11 +46,7 @@ $heroku - link github repo and setup env variables
 
 ## Contributing
 
-
-
-## Versioning
-
-
+If you want to contribute in anyway you are most welcome to fork/make a pull request
 
 ## Authors
 
