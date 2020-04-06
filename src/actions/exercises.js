@@ -14,17 +14,21 @@ export const addWeights = (updates) => {
     }
 }
 
-export const startAddWeights = (updates, day) => {
+export const startAddWeights = (updates, state) => {
+    const day = state.day
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
         const session = getState().exercises.session
-
+        
         //filter sets A/B and session, increment accordingly
         const weights = {}
         const newState = updates.map(ex=>{
-            const newLoad = ex.day!==day ? ex.load +=loadInc(ex.id) : ex.load
-            weights[ex.id] = newLoad
-            ex.load = newLoad
+            if (ex.day!==day && state[`${ex.id}-progress`]===0){
+                const newLoad =  ex.load +loadInc(ex.id)
+                weights[ex.id] = newLoad
+                ex.load = newLoad
+            }
+            
             return ex
         })
         const promises = [

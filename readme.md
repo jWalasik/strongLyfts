@@ -29,6 +29,15 @@ $npm build:dev - bundles modules into single file, at public/dist directory
 $npm build:prod - bundles modules into single file, at public/dist directory - optimized for production
 
 $Firebase - 
+```
+FIREBASE_API_KEY=YOUR_FIREBASE_KEY
+FIREBASE_AUTH_DOMAIN=app-name.firebaseapp.com
+FIREBASE_DATABASE_URL=https://app-name.firebaseio.com
+FIREBASE_PROJECT_ID=app-name
+FIREBASE_STORAGE_BUCKET=app-name.appspot.com
+FIREBASE_MESSAGING_SENDER_ID=11111111111
+```
+
 
 ## Running the tests
 

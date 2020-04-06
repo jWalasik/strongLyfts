@@ -16,6 +16,7 @@ export class Exercise extends React.Component {
             }
         })
         this.state.progress ++
+        this.props.completeSet(this.props.id)
     }
     onClose = () => {        
         this.props.closeModal()

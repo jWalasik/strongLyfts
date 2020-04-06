@@ -10,18 +10,23 @@ import {Redirect} from 'react-router-dom';
 export class WorkoutPage extends React.Component {
     constructor(props){
         super(props);
-        console.log(props)
         this.state = {
             day: this.props.session % 2 === 0 ? 'B' : 'A',
-            modal: props.modal}
+            modal: props.modal,
+        }
     }
     onConfirmation = () => {
-        this.props.startAddWeights(this.props.exercises, this.state.day);
+        console.log(this.state)
+        this.props.startAddWeights(this.props.exercises, this.state);
         this.props.closeModal()
         this.props.history.push('/');
     }
     onClose = () => {
         this.props.closeModal()
+    }
+    completeSet = (id) => {
+        const idx = `${id}-progress`
+        this.setState({[idx]: this.state[idx]-1})
     }
     handleClick = () => {
         this.props.openModal({
@@ -42,10 +47,14 @@ export class WorkoutPage extends React.Component {
             <div className='page-header'>
                 <div className='content-container'>
                     <h1>Session {this.props.session}</h1>
-
                     {this.props.exercises.map((exercise) => {                           
-                        if(exercise.day !== this.state.day){                        
-                            return <Exercise className='exercise-item' key={exercise.id}{...exercise}/>
+                        if(exercise.day !== this.state.day){
+                            const key = `${exercise.id}-progress`
+                            if(this.state[key]===undefined){
+                                this.state[key] = exercise.id==='Deadlift' ? 1 : 5 
+                            }
+                            
+                            return <Exercise className='exercise-item' key={exercise.id}{...exercise} completeSet={this.completeSet}/>
                         }                            
                     })
                     }
