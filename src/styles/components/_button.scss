@@ -1,8 +1,8 @@
 .button {
-  background: $action;
+  background: var(--action);
   border: none;
   border-radius: 5px;
-  color: white;
+  color: var(--bgMain);
   display: inline-block;
   font-size: $font-size-large;
   font-weight: 300;
@@ -12,8 +12,8 @@
   min-width: 80px;
 }
 .button:disabled, button[disabled]{
-  color: $action;
-  border: 3px solid $action;
+  color: var(--action);
+  border: 3px solid var(--action);
 }
 
 .button--link {
@@ -31,60 +31,17 @@
 .button--set {
   height: $l-size;
   width: $l-size;
-  color: $off-white;
+  color: var(--bgMain);
   font-size: $font-size-large;
   box-sizing: border-box;
-  background-color: $off-white; 
+  background-color: var(--bgMain); 
   border: 3px solid $light-grey;
   border-radius: 50%;
   margin: $m-size;
 }
 .button--set:hover {
-  border: 3px solid $action;
+  border: 3px solid var(--action);
 }
 .button--reset {
-  background: rgb(180, 58, 49)
-}
-
-.toggle-switch {
-  border: 1px solid red;
-}
-.toggle-switch__checkbox {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-.toggle-switch__label {
-  cursor: pointer;
-	text-indent: -9999px;
-	width: 200px;
-	height: 100px;
-	background: rgb(0, 2, 117);
-	display: block;
-	border-radius: 100px;
-	position: relative;
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 90px;
-    height: 90px;
-    background: #fff;
-    border-radius: 90px;
-    transition: 0.3s;
-  }
-}
-
-.toggle-switch__checkbox:checked + label {
-  background: #00e3eb;
-}
-.toggle-switch__checkbox:checked + label:after {
-  left: calc(100% - 5px);
-	transform: translateX(-100%);
-}
-
-.toggle-switch__label:active:after {
-  width: 50px;
+  background: var(--actionNeg); 
 }

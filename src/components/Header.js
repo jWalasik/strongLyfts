@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 import ThemeSwitch from './ThemeSwitch';
 
-export const Header = ({ startLogout }) => (
-  <header className="header">
+export const Header = ({ startLogout, isDarkMode }) => (
+  <header className={`header ${isDarkMode ? 'dark' : ''}`}>
     <div className="content-container">
       <div className="header__content">
         <Link className="header__title" to="/dashboard">
@@ -21,5 +21,9 @@ export const Header = ({ startLogout }) => (
 const mapDispatchToProps = (dispatch) => ({
   startLogout: () => dispatch(startLogout())
 });
-
-export default connect(undefined, mapDispatchToProps)(Header);
+const mapStateToProps = (state) => {
+  return {
+    isDarkMode: state.theme.isDarkMode
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

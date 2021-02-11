@@ -1,7 +1,7 @@
 .list-header {
-    backface-visibility: $off-white;
-    border: 1px solid darken($off-white, 7%);
-    color: $grey;
+    backface-visibility: var(--bgMain);
+    border: 1px solid var(--bgMain);
+    color: var(--inactive);;
     display: flex;
     justify-content: space-between;
     padding: $s-size $m-size;
@@ -15,9 +15,9 @@
 }
 
 .list-item {
-    border: 1px solid darken($off-white, 7%);
+    border: 1px solid var(--bgMain);
     border-top: none;
-    color: $dark-grey;
+    color: var(--bgSub);;
     display: flex;
     flex-direction: column;
     padding: $s-size;
@@ -25,7 +25,7 @@
     transition: background .3s ease;
 
     &:hover {
-        background: $off-white;
+        background: var(--bgMain);
     }
 
     @media (min-width: $desktop-breakpoint){
@@ -52,7 +52,7 @@
 }
 
 .list-item__sub-title {
-    color: $grey;
+    color: var(--inactive);;
     font-size: $font-size-small;
 }
 

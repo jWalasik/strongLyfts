@@ -1,0 +1,16 @@
+:root {
+  --action: #1c88bf;
+  --actionNeg: rgb(255, 92, 92);
+  --bgMain: #f7f7f7;
+  --bgSub: #052049;
+  --text: #1f1f1f;
+  --inactive: gray;
+}
+
+:root .dark {
+  --action: #4da7d4;
+  --actionNeg: rgb(255, 92, 92);
+  --bgMain: #2d3135;
+  --bgSub: #052049;
+  --text: #f7f7f7;
+}
