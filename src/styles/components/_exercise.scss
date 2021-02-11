@@ -63,7 +63,7 @@ input[type=checkbox]{
     display: none;
 }
 input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
-    border-color: $blue;
+    border-color: $action;
     
     &::after{
         -moz-animation: upstroke .3s ease 0s forwards;
@@ -96,7 +96,7 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
         position: absolute;
         height: 0;
         width: $l-size*.15;
-        background-color: $blue;
+        background-color: $action;
         display: inline-block;
         -moz-transform-origin: left top;
         -ms-transform-origin: left top;
