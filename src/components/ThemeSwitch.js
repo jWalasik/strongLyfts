@@ -24,9 +24,13 @@ export class ThemeSwitch extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  toggleDarkMode: () => dispatch(toggleDarkMode())
-})
+const mapDispatchToProps = (dispatch) => {
+  return  {
+    toggleDarkMode: () => dispatch(toggleDarkMode())
+  }
+}
+
+
 
 const mapStateToProps = (state) => {
   return {

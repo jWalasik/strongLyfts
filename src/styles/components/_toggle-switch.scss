@@ -1,6 +1,6 @@
 
 .toggle-switch {
-
+  margin: auto;
 }
 .toggle-switch__checkbox {
   height: 0;
@@ -12,7 +12,7 @@
 	text-indent: -9999px;
 	width: 50px;
 	height: 30px;
-	background: rgb(106, 106, 114);
+	background: var(--bgSub);
 	display: block;
 	border-radius: 30px;
 	position: relative;
@@ -24,19 +24,18 @@
     left: 2.5px;
     width: 25px;
     height: 25px;
-    background: var(--action);
+    background: var(--bgMain);
     border-radius: 15px;
     transition: 0.3s;
   }
 }
 
 .toggle-switch__checkbox:checked + label {
-  background: #869797;
+  background: var(--bgSub);
 }
 .toggle-switch__checkbox:checked + label:after {
   left: calc(100% - 2.5px);
 	transform: translateX(-100%);
-  background: #a7ffff;
 }
 
 .toggle-switch__label:active:after {

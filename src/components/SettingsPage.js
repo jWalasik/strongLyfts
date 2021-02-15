@@ -49,7 +49,7 @@ export class SettingPage extends React.Component{
 
 const mapDispatchToProps = (dispatch) => ({
     startEditWeights: (weight) => dispatch(startEditWeights(weight)),
-    startResetWeights: ()=> dispatch(startResetWeights()),
+    startResetWeights: () => dispatch(startResetWeights()),
     openModal: (modal) => dispatch(openModal(modal)),
     closeModal: (modal) => dispatch(closeModal(modal))
 })
