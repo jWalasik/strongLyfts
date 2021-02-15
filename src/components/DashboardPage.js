@@ -1,7 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 
-const ExpenseDashboardPage = () => (
+const DashboardPage = () => (
   <div className="page-header">
     <div className="content-container">
       <div className="dashboard">
@@ -12,4 +13,10 @@ const ExpenseDashboardPage = () => (
   </div>
 );
 
-export default ExpenseDashboardPage;
+const mapStateToProps = (state) => {
+  return {
+    isDarkMode: state.theme.isDarkMode
+  }
+}
+
+export default connect(mapStateToProps, null)(DashboardPage);

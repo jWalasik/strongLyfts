@@ -3,6 +3,9 @@
   margin-bottom: $l-size;
   padding: $l-size 0;
 }
+.dark {
+  background: var(--bgMain);
+}
 
 .page-header__actions {
   margin-top: $m-size;
