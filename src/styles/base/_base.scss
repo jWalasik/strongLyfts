@@ -20,6 +20,9 @@ input {
     width: 150px;
   }
 }
+main {
+  min-height: calc(100vh - 110px);
+}
 
 button {
   cursor: pointer;

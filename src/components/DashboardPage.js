@@ -5,8 +5,11 @@ import Chart from './Chart';
 import { ThemeSwitch } from './ThemeSwitch';
 
 const DashboardPage = ({isDarkMode}) => (
-  <main className={`page ${isDarkMode && 'dark'}`}>
+  <main className={`page ${isDarkMode ? 'dark' : ''}`}>
     <div className="dashboard">
+      <h2>
+        Week {0 ? 1 : 0}
+      </h2>
       <Chart />
     </div>      
   </main>
