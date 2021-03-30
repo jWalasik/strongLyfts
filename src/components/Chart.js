@@ -56,22 +56,25 @@ const placeholderData = [
 
 const Chart = ({isDarkMode, progress}) => {
   return (
-    <ResponsiveContainer width='100%' height='100%' >
+    <ResponsiveContainer width='95%' height='50%' >
       <LineChart
         width={500}
         height={300}
         data={placeholderData}
+        margin={{
+          left: -10,
+        }}
       >
         <CartesianGrid strokeDasharray='3 3' />
         <XAxis dataKey='date' />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type='monotone' dataKey='Benchpress' stroke='#53c2c0' activeDot={{r: 8}} />
-        <Line type='monotone' dataKey='Deadlift' stroke='#48db5a' activeDot={{r: 8}} />
-        <Line type='monotone' dataKey='Squat' stroke='#4874db' activeDot={{r: 8}} />
-        <Line type='monotone' dataKey='Barbell Row' stroke='#ffd65c' activeDot={{r: 8}} />
-        <Line type='monotone' dataKey='Shoulder Press' stroke='#ff5c5c' activeDot={{r: 8}} />
+        <Line type='monotone' dataKey='Benchpress' stroke='#53c2c0' activeDot={{r: 5}} dot={{r:1}} />
+        <Line type='monotone' dataKey='Deadlift' stroke='#48db5a' activeDot={{r: 5}} dot={{r:1}} />
+        <Line type='monotone' dataKey='Squat' stroke='#4874db' activeDot={{r: 5}} dot={{r:1}} />
+        <Line type='monotone' dataKey='Barbell Row' stroke='#ffd65c' activeDot={{r: 5}} dot={{r:1}} />
+        <Line type='monotone' dataKey='Shoulder Press' stroke='#ff5c5c' activeDot={{r: 5}} dot={{r:1}} />
       </LineChart>
     </ResponsiveContainer>
   )

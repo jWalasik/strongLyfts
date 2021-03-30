@@ -1,48 +1,30 @@
 .menu {
-  background-color: var(--bgMain);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 60px;
+  background: $static;
+  padding: 5px;
 }
 
-.menu-block__right {
-  display: flex;
-  justify-content: space-around;
-  width: 40%;
+.dark {
+  background: $neg;
 }
 
 .menu-button {
-  color: var(--action);
-}
-.workout-button {
-  text-decoration: none;
-}
-
-.settings-button {
-  position: absolute;
-  bottom: 40px;
-  left: calc(50% - 22px);
-  background-color: white;
-  box-shadow: 0 0 0 5px white;
-  width: 44px;
-  height: 44px;
-  fill: white;
-  stroke: black;
-  stroke-width: 4px;
-  border: 2px solid black;
-  border-radius: 50%;
-  padding: 3px;
-}
-
-.logout-button {
-  background: none;
-  outline: none;
+  background-color: $static;
   border: none;
-  width: 50px;
-  height: 50px;
-  margin: auto;
-  color: var(--action);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon {
+  fill: $active;
+  stroke: $active;
+  width: 36px;
+  height: 36px;
 }
