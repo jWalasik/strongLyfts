@@ -5,29 +5,35 @@ export const setProgress = (progress) => ({
   progress
 })
 
-export const startSetProgress = (update) => {
+export const startProgressUpdate = (update) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid
-    return database.ref(`users/${uid}/`).update(updates).then(()=>{
-      dispatch(setProgress(update))
-    })
+    const progress = getState().progress
+    const newEntry = {
+      date: (new Date()).toISOString().split('T')[0],
+      weights: {
+        'Barbell Row': update[0].load,
+        'Bench Press': update[1].load,
+        'Deadlift': update[2].load,
+        'Overhead Press': update[3].load,
+        'Squat': update[4].load,
+      }
+    }
+    const progressUpdate = progress.push(newEntry)
+    return database.ref(`users/${uid}/progress/`)
+      .push(newEntry)
+      .then(() => dispatch(setProgress( progressUpdate )))
   }
 }
 
 export const fecthProgress = () => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid
-    
+
     return database.ref(`users/${uid}/progress/`)
       .once('value')
       .then(snapshot => snapshot.val() ? snapshot.val() : [])
-      .then(data => {
-        console.log(data)
-        return dispatch(setProgress({
-          day: data.day,
-          stats: data.stats
-        }))
-      })
+      .then(data => dispatch(setProgress( Object.values(data) )))
     
   }
 }

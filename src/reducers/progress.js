@@ -1,7 +1,4 @@
-const progressReducerDefaultState = {
-  day: 0,
-  stats: []
-}
+const progressReducerDefaultState = []
 
 export default (state = progressReducerDefaultState, action) => {
   switch (action.type) {

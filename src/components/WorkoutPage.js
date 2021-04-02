@@ -5,6 +5,7 @@ import Modal from './Modal';
 import Page from './Page';
 import {connect} from 'react-redux';
 import {startAddWeights} from '../actions/exercises';
+import {startProgressUpdate} from '../actions/progress';
 import {openModal, closeModal} from '../actions/modal';
 import {Redirect} from 'react-router-dom';
 
@@ -18,7 +19,7 @@ export class WorkoutPage extends React.Component {
 	}
 	onConfirmation = () => {
 			this.props.startAddWeights(this.props.exercises, this.state)
-			this.props.startUpdateProgress(this.props.progress, this.state)
+			this.props.startProgressUpdate(this.props.exercises, this.props.session)
 			this.props.start
 			this.props.closeModal()
 			this.props.history.push('/')
@@ -72,7 +73,7 @@ export class WorkoutPage extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
 		startAddWeights: (exercises, day) => dispatch(startAddWeights(exercises, day)),
-		startUpdateProgress: (progress, day) => dispatch(startUpdateProgress(progress, day)),
+		startProgressUpdate: (progress) => dispatch(startProgressUpdate(progress)),
 		closeModal: (modal) => dispatch(closeModal(modal)),
 		openModal: (modal) => dispatch(openModal(modal))
 })
