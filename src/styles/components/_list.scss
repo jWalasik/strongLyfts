@@ -1,7 +1,7 @@
 .list-header {
-    backface-visibility: var(--bgMain);
-    border: 1px solid var(--bgMain);
-    color: var(--inactive);;
+    backface-visibility: $bg;
+    border: 1px solid $bg;
+    color: $static;
     display: flex;
     justify-content: space-between;
     padding: $s-size $m-size;
@@ -15,17 +15,17 @@
 }
 
 .list-item {
-    border: 1px solid var(--bgMain);
+    border: 1px solid $bg;
     border-top: none;
-    color: var(--bgSub);;
+    color: $bg;
     display: flex;
     flex-direction: column;
     padding: $s-size;
     text-decoration: none;
-    transition: background .3s ease;
+    transition: all .3s ease;
 
     &:hover {
-        background: var(--bgMain);
+        background: $bg;
     }
 
     @media (min-width: $desktop-breakpoint){
@@ -38,7 +38,7 @@
 
 .list-item--message {
     align-items: center;
-    color: $grey;
+    color: $static;
     justify-content: center;
     padding: $m-size;
     &:hover {
@@ -52,7 +52,7 @@
 }
 
 .list-item__sub-title {
-    color: var(--inactive);;
+    color: $static;
     font-size: $font-size-small;
 }
 

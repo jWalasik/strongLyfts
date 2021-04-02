@@ -4,6 +4,7 @@ import authReducer from '../reducers/auth';
 import exerciseReducer from '../reducers/exercises';
 import modalReducer from '../reducers/modal';
 import themeReducer from '../reducers/theme';
+import progressReducer from '../reducers/progress';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -13,7 +14,8 @@ export default () => {
       auth: authReducer,
       exercises: exerciseReducer,
       modal: modalReducer,
-      theme: themeReducer
+      theme: themeReducer,
+      progress: progressReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   );

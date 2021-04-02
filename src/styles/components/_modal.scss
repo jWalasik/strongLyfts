@@ -6,17 +6,17 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,.3);
     justify-content: center;
 }
 .modal--window{
-    background-color: #fefefe;
+    background-color: $neg;
     padding: $l-size;
     border-radius: 5px;
     text-align: center;
     min-width: 300px;
     width: 40%;
-    box-shadow: 10px 10px 5px black;
+    box-shadow: 10px 10px 5px darken($bg, 30%);
     font-size: $font-size-large;
     padding: $l-size;
 }

@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
 
 export const Header = ({ isDarkMode }) => (
-  <header className={`header ${isDarkMode ? 'dark' : ''}`}>
-    <Link className="header__title" to="/dashboard">
-      <h1>Strong Lyfts</h1>
-    </Link>
+  <header className={`header ${isDarkMode ? 'dark' : 'light'}`}>
+    <h1 className='header-title'>
+      <Link className="header-title__link" to="/dashboard">Strong Lifts</Link>
+    </h1>
+    <p className='header-about'>Your personal workout tracker</p>
   </header>
 );
 

@@ -1,5 +1,4 @@
 const progressReducerDefaultState = {
-  weight: 0,
   day: 0,
   stats: []
 }

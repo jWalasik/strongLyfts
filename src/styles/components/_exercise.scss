@@ -32,7 +32,7 @@
 .exercise {
     display: flex;
     justify-content: space-between;
-    border: 1px solid var(--bgMain);
+    border: 1px solid $static;
     padding: $s-size;
     margin: $s-size;
     align-items: center;
@@ -63,7 +63,7 @@ input[type=checkbox]{
     display: none;
 }
 input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
-    border-color: var(--action);
+    border-color: $active;
     
     &::after{
         -moz-animation: upstroke .3s ease 0s forwards;
@@ -82,12 +82,12 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
     height: $l-size*1.2;
     width: $l-size*1.2;
     background-color: transparent;
-    border: $l-size*.1 solid $light-grey;
+    border: $l-size*.1 solid $active;
     border-radius: 50%;
     position: relative;
     display: inline-block;
     box-sizing: border-box;
-    transition: border-color ease 0.3s;
+    transition: all ease 0.3s;
 
     &::before, &::after {
         -moz-box-sizing: border-box;
@@ -96,7 +96,7 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
         position: absolute;
         height: 0;
         width: $l-size*.15;
-        background-color: var(--action);
+        background-color: $active;
         display: inline-block;
         -moz-transform-origin: left top;
         -ms-transform-origin: left top;
@@ -112,7 +112,6 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
     &::before {
         top: $l-size*.8;
         left: $l-size*.5;
-        box-shadow: 0 0 0 $l-size*.08 var(--bgMain);
         -moz-transform: rotate(-135deg);
         -ms-transform: rotate(-135deg);
         -o-transform: rotate(-135deg);
@@ -127,6 +126,5 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
         -o-transform: rotate(-45deg);
         -webkit-transform: rotate(-45deg);
         transform: rotate(-45deg);
-        
     }    
 }

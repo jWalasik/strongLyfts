@@ -1,0 +1,16 @@
+.chart {
+  width: 100%;
+  height: 50%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.chart-overlay__empty {
+  position: absolute;
+}
+
+.recharts-surface {
+  margin-left: -10px;
+}

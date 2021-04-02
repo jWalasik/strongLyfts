@@ -1,16 +1,15 @@
-:root {
-  --action: #1c88bf;
-  --actionNeg: rgb(255, 255, 255);
-  --bgMain: #f7f7f7;
-  --bgSub: #052049;
-  --text: #1f1f1f;
-  --inactive: gray;
+.dark {
+  $static: #0787f0;
+  $active: #34383b;
+  $bg: #021321;
+  $neg: #f7f7f7;
+  $warn: #d64747;
 }
 
-:root .dark {
-  --action: #4da7d4;
-  --actionNeg: rgb(255, 92, 92);
-  --bgMain: #2d3135;
-  --bgSub: #d5dfee;
-  --text: #f7f7f7;
+.light {
+  $static: #34383b;
+  $active: #0787f0;
+  $bg: #f7f7f7;
+  $neg: #021321;
+  $warn: #d64747;
 }

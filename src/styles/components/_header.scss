@@ -1,18 +1,17 @@
 .header {
-  background: var(--action);
+  background: $active;
+  padding: $s-size;
 }
 
-.header__content {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: $s-size 0;
+.header-title {
+  margin: 0;
 }
 
-.header__title {
-  color: var(--text);
+.header-title__link {
   text-decoration: none;
-  h1 {
-    margin: 0;
-  }
+  color: $static;
+}
+.header-about {
+  color: $neg;
+  margin: 0;
 }
