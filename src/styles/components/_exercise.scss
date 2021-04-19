@@ -38,19 +38,23 @@
     align-items: center;
     cursor: pointer;
 }
-.exercise--details{
+.exercise-details{
     flex-wrap: wrap;
     border-top: none;
     margin-top: -$s-size;
 }
-.exercise--header{
+.exercise-details__collapsed {
+    visibility: hidden;
+    height: 0;
+}
+.exercise-header{
     border: none;
     margin: 0;
     padding: 0;
     flex-wrap: wrap-reverse;
     width: 100%;
 }
-.exercise--buttons{
+.exercise-buttons{
     border: none;
     width: 100%;
     margin: 0;
@@ -78,7 +82,7 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
         animation: upstroke .6s ease 0s forwards;
     }
 }
-.exercise--checkbox{
+.exercise-checkbox{
     height: $l-size*1.2;
     width: $l-size*1.2;
     background-color: transparent;

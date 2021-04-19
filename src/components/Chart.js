@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const Chart = ({isDarkMode, progress}) => {
-  console.log(progress)
   return (
     <div className={`chart`}>
       <div>Your progress</div>

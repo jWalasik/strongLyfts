@@ -47,21 +47,19 @@ export class Exercise extends React.Component {
                     >
                     </input>
                     <label 
-                        className="exercise exercise--checkbox" 
+                        className="exercise exercise-checkbox" 
                         htmlFor={this.props.id}>
                     </label>                   
                 </div>
-                {this.state.focused && 
-                <div className="exercise exercise--details">
-                    <h3 className="exercise exercise--header">
+                <div className={`exercise exercise-details ${this.state.focused ? null : 'exercise-details__collapsed'}`}>
+                    <h3 className="exercise exercise-header">
                         <span>Sets: {this.props.sets} x 5</span>
                         <span>Load: {this.props.load} kg</span>
                     </h3>
-                    <div className="exercise exercise--buttons">
+                    <div className="exercise exercise-buttons">
                         {buttons}
                     </div>
-                </div>
-                }      
+                </div>    
             </div>
         )
     }
