@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const Chart = ({isDarkMode, progress}) => {
+  console.log(progress)
   return (
     <div className={`chart`}>
       <div>Your progress</div>
@@ -19,12 +20,12 @@ const Chart = ({isDarkMode, progress}) => {
           height={300}
           data={progress}
           margin={{
-            left: -10,
+            left: progress.length === 0 ? -10 : 25,
           }}
         >
           {/* <Legend verticalAlign='top' height='36' /> */}
           <CartesianGrid strokeDasharray='3 3' />
-          <XAxis padding={{top: 20}} dataKey='date' tick={{fontSize: 12}}  />
+          <XAxis padding={{top: 25}} dataKey='date' tick={{fontSize: 12}}  />
           <YAxis padding={10} unit='kg' tick={{fontSize: 12}} width={20} />
           <Tooltip />
 

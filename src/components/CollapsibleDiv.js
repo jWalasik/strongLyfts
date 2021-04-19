@@ -1,9 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const CollapsibleDiv = ({children}) => {
+  const [collapsed, setCollapsed] = useState(true)
+  const [header, ...rest] = children
+  const handleClick = () => {
+    setCollapsed(!collapsed)
+  }
   return (
-    <div>
-
+    <div onClick={handleClick}>
+      {header}
+      {!collapsed && rest }
     </div>
   )
 }
