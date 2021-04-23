@@ -1,15 +1,23 @@
+:root {
+  --active: #{$active};
+  --static: #{$static};
+  --bg: #{$bg};
+  --neg: #{$neg};
+  --warm: #{$warn};
+}
+
 .dark {
-  $static: #0787f0;
-  $active: #34383b;
-  $bg: #021321;
-  $neg: #f7f7f7;
-  $warn: #d64747;
+  --static: #0787f0;
+  --active: #34383b;
+  --bg: #021321;
+  --neg: #f7f7f7;
+  --warn: #d64747;
 }
 
 .light {
-  $static: #34383b;
-  $active: #0787f0;
-  $bg: #f7f7f7;
-  $neg: #021321;
-  $warn: #d64747;
+  --static: #34383b;
+  --active: #0787f0;
+  --bg: #f7f7f7;
+  --neg: #021321;
+  --warn: #d64747;
 }

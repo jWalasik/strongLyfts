@@ -1,7 +1,5 @@
 .page {
-  background: $neg;
   margin-bottom: 70px;
-}
-.page__dark {
-
+  background-color: var(--bg);
+  color: var(--neg);
 }

@@ -1,7 +1,7 @@
 .list-header {
-    backface-visibility: $bg;
-    border: 1px solid $bg;
-    color: $static;
+    backface-visibility: var(--bg);
+    border: 1px solid var(--bg);
+    color: var(--static);
     display: flex;
     justify-content: space-between;
     padding: $s-size $m-size;
@@ -15,9 +15,9 @@
 }
 
 .list-item {
-    border: 1px solid $bg;
+    border: 1px solid var(--bg);
     border-top: none;
-    color: $bg;
+    color: var(--bg);
     display: flex;
     flex-direction: column;
     padding: $s-size;
@@ -38,7 +38,7 @@
 
 .list-item--message {
     align-items: center;
-    color: $static;
+    color: var(--static);
     justify-content: center;
     padding: $m-size;
     &:hover {

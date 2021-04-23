@@ -1,5 +1,4 @@
 .dashboard {
-  height: 100vh;
   padding: 0 10px 0 10px;
 }
 .dashboard-header {
@@ -8,6 +7,6 @@
 
   a {
     text-decoration: none;
-    color: $active;
+    color: var(--active);
   }
 }

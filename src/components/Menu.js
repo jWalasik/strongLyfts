@@ -11,7 +11,7 @@ import List from './svg/List'
 
 
 export const Menu = ({ startLogout, isDarkMode}) => (
-  <nav className={`menu ${isDarkMode && 'dark'}`}>
+  <nav className={`menu ${isDarkMode ? 'dark' : 'light'}`}>
     <Link className='menu-button workout-button' to="/">
       <Home className='menu-icon' />
     </Link>

@@ -32,7 +32,7 @@
 .exercise {
     display: flex;
     justify-content: space-between;
-    border: 1px solid $static;
+    border: 1px solid var(--static);
     padding: $s-size;
     margin: $s-size;
     align-items: center;
@@ -67,7 +67,7 @@ input[type=checkbox]{
     display: none;
 }
 input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
-    border-color: $active;
+    border-color: var(--active);
     
     &::after{
         -moz-animation: upstroke .3s ease 0s forwards;
@@ -86,7 +86,7 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
     height: $l-size*1.2;
     width: $l-size*1.2;
     background-color: transparent;
-    border: $l-size*.1 solid $active;
+    border: $l-size*.1 solid var(--active);;
     border-radius: 50%;
     position: relative;
     display: inline-block;
@@ -100,7 +100,7 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
         position: absolute;
         height: 0;
         width: $l-size*.15;
-        background-color: $active;
+        background-color: var(--active);
         display: inline-block;
         -moz-transform-origin: left top;
         -ms-transform-origin: left top;

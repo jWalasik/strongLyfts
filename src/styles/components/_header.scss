@@ -1,5 +1,5 @@
 .header {
-  background: $active;
+  background: var(--static);
   padding: $s-size;
 }
 
@@ -9,9 +9,9 @@
 
 .header-title__link {
   text-decoration: none;
-  color: $static;
+  color: var(--active);
 }
 .header-about {
-  color: $neg;
+  color: var(--bg);
   margin: 0;
 }

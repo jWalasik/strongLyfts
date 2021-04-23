@@ -6,11 +6,11 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: rgba(0,0,0,.3);
+    background-color: var(--static);
     justify-content: center;
 }
 .modal--window{
-    background-color: $neg;
+    background-color: var(--neg);
     padding: $l-size;
     border-radius: 5px;
     text-align: center;

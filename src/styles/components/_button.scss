@@ -1,5 +1,5 @@
 .button {
-  background: $active;
+  background: var(--active);
   border: none;
   border-radius: 5px;
   color: $bg;
@@ -13,7 +13,7 @@
 }
 .button:disabled, button[disabled]{
   color: $active;
-  border: 3px solid $active;
+  border: 3px solid var(--active);
 }
 
 .button--link {
@@ -21,7 +21,7 @@
 }
 
 .button--secondary {
-  background: $static;
+  background: var(--static);
 }
 
 .button--finish {
@@ -31,17 +31,17 @@
 .button--set {
   height: $l-size;
   width: $l-size;
-  color: $neg;
+  color: var(--neg);
   font-size: $font-size-large;
   box-sizing: border-box;
-  background-color: $neg; 
-  border: 3px solid $active;
+  background-color: var(--neg);
+  border: 3px solid var(--active);
   border-radius: 50%;
   margin: $m-size;
 }
 .button--set:hover {
-  border: 3px solid $active;
+  border: 3px solid var(--active);
 }
 .button--reset {
-  background: $warn; 
+  background: var(--warn);
 }

@@ -5,12 +5,12 @@
   bottom: 0;
   width: 100%;
   height: 50px;
-  background: $static;
+  background: var(--static);
   padding: 5px;
 }
 
 .menu-button {
-  background-color: $static;
+  background-color: var(--static);
   border: none;
   display: flex;
   flex-direction: column;
@@ -19,8 +19,8 @@
 }
 
 .menu-icon {
-  fill: $active;
-  stroke: $active;
+  fill: var(--active);
+  stroke: var(--active);
   width: 36px;
   height: 36px;
 }
