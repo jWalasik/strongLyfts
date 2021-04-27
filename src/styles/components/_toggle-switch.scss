@@ -13,7 +13,7 @@
 }
 
 #shadow {
-  fill: $static;
+  fill: var(--static);
   transform-origin: center;
   transition: all .4s;
   opacity: 0;

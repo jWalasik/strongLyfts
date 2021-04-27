@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { startLogin } from '../actions/auth'
+import { startLogout } from '../actions/auth'
 import ThemeSwitch from './ThemeSwitch'
 
 import Exit from './svg/Exit'
@@ -10,7 +10,7 @@ import Home from './svg/Home'
 import List from './svg/List'
 
 
-export const Menu = ({ startLogout, isDarkMode}) => (
+export const Menu = ({startLogout, isDarkMode}) => (
   <nav className={`menu ${isDarkMode ? 'dark' : 'light'}`}>
     <Link className='menu-button workout-button' to="/">
       <Home className='menu-icon' />

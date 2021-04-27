@@ -66,7 +66,7 @@
 input[type=checkbox]{
     display: none;
 }
-input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
+input[type=checkbox]:checked + .exercise-checkbox{
     border-color: var(--active);
     
     &::after{
@@ -86,7 +86,7 @@ input[type=checkbox]:checked + .exercise--checkbox, .exercise--checkbox.checked{
     height: $l-size*1.2;
     width: $l-size*1.2;
     background-color: transparent;
-    border: $l-size*.1 solid var(--active);;
+    border: $l-size*.1 solid var(--static);
     border-radius: 50%;
     position: relative;
     display: inline-block;

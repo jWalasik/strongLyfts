@@ -7,7 +7,7 @@ const ExerciseList = () => {
       <h2>Exercises</h2>
 
       <CollapsibleDiv>
-        <h3>Squat</h3>
+        <h3>Squat <span>&#11167;</span></h3>
         <div>Squat is the most important exercise in this training routine. Always perfom it at the begining of your workout as it's most taxing. </div>
 
         <div>
@@ -24,7 +24,7 @@ const ExerciseList = () => {
       </CollapsibleDiv>
 
       <CollapsibleDiv>
-        <h3>Deadlift</h3>
+        <h3>Deadlift <span>&#11167;</span></h3>
         <div>Squat is the most important exercise in this training routine. Always perfom it at the begining of your workout as it's most taxing.</div>
 
         <div>
@@ -42,7 +42,8 @@ const ExerciseList = () => {
       </CollapsibleDiv>
 
       <CollapsibleDiv>
-        <h3>Barbell Row</h3>
+        <h3>Barbell Row <span>&#11167;</span>
+        </h3>
         <div>Barbell row enages your upper and lower back in addition to hips and arms. Its opposite for benchpress and makes great supplement exercise.</div>
 
         <div>
@@ -59,7 +60,7 @@ const ExerciseList = () => {
       </CollapsibleDiv>
 
       <CollapsibleDiv>
-        <h3>Bench Press</h3>
+        <h3>Bench Press <span>&#11167;</span></h3>
         <div>Benchpress is the most effective exercise to gain upper-body strength and muscle mass.</div>
 
         <div>
@@ -77,7 +78,7 @@ const ExerciseList = () => {
       </CollapsibleDiv>
 
       <CollapsibleDiv>
-        <h3>Overhead Press</h3>
+        <h3>Overhead Press <span>&#11167;</span></h3>
         <div>The Overhead Press is a full body, compound exercise. Your shoulders and arms press the weight over your head while your legs, lower back and abs balance you. The Overhead Press is one of the best exercises to build strong, muscular and healthy shoulders with bigger arms.</div>
 
         <div>

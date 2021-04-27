@@ -32,7 +32,7 @@ export class Exercise extends React.Component {
         for (let i=0; i<this.props.sets; i++){
             buttons.push(<Button key={i} handleClick={this.handleClick} />)
         }
-       
+        
         return (
             <div className="content-container">
                 <div className="exercise" onClick={this.onFocus}>
@@ -43,7 +43,7 @@ export class Exercise extends React.Component {
                         id={this.props.id}
                         type="checkbox" 
                         disabled={true}
-                        checked={this.state.progress>=this.props.sets}
+                        checked={this.state.progress >= this.props.sets}
                     >
                     </input>
                     <label 

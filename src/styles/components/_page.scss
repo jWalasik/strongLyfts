@@ -1,5 +1,10 @@
 .page {
-  margin-bottom: 70px;
-  background-color: var(--bg);
-  color: var(--neg);
+  color: var(--static);
+  background: var(--bg);
+  padding: $s-size;
+  margin-bottom: 50px;
+}
+
+.page__settings {
+  margin-bottom: 0px;
 }

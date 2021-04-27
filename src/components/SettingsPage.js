@@ -31,7 +31,11 @@ export class SettingPage extends React.Component{
 	}
 	render() {
 		return (
-			<Page>
+			<Page className='page__settings'>
+					<div className='setting-page__instructions'>
+						Enter weights for each exercise.
+						Most people start with 50% of maximum load for 5 reps.
+					</div>
 					<WeightForm 
 						exercises={this.props.exercises.exercises}
 						onSubmit={this.onSubmit}

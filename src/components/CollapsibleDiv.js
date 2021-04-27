@@ -7,8 +7,9 @@ const CollapsibleDiv = ({children}) => {
     setCollapsed(!collapsed)
   }
   return (
-    <div onClick={handleClick}>
+    <div className='collapsible-container' onClick={handleClick}>
       {header}
+
       {!collapsed && rest }
     </div>
   )

@@ -47,10 +47,10 @@ export default class WeightForm extends React.Component {
     }
     render(){
         return (
-            <form className="form" onSubmit={this.onSubmit}>                    
+            <form className="form" onSubmit={this.onSubmit}>              
                     <label>Barbell Row
                         <input
-                            type="text" 
+                            type="number" 
                             placeholder="Enter Weight"
                             value={this.state.br}
                             onChange={this.onBPChange}
@@ -60,7 +60,7 @@ export default class WeightForm extends React.Component {
 
                     <label>Bench Press
                         <input
-                            type="text" 
+                            type="number" 
                             placeholder="Enter weight"
                             value={this.state.bp}
                             onChange={this.onBRChange}
@@ -70,7 +70,7 @@ export default class WeightForm extends React.Component {
                     
                     <label>Deadlift
                         <input
-                            type="text" 
+                            type="number" 
                             placeholder="Enter weight"
                             value={this.state.dl}
                             onChange={this.onDLChange}
@@ -80,7 +80,7 @@ export default class WeightForm extends React.Component {
                     
                     <label>Overhead Press
                         <input
-                            type="text" 
+                            type="number" 
                             placeholder="Enter weight"
                             value={this.state.op}
                             onChange={this.onOPChange}
@@ -90,7 +90,7 @@ export default class WeightForm extends React.Component {
                     
                     <label>Squat
                         <input
-                            type="text" 
+                            type="number" 
                             placeholder="Enter weight"
                             value={this.state.sq}
                             onChange={this.onSQChange}

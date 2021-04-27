@@ -14,9 +14,13 @@
   padding: $l-size $m-size;
   text-align: center;
   width: 25rem;
+  color: var(--neg);
 }
 
 .box-layout__title {
   margin: 0 0 $m-size 0;
   line-height: 1;
+}
+.box-layout__desc {
+  margin-top: 20px;
 }
