@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import WeightForm from './WeightForm';
 import {startEditWeights, startResetWeights} from '../actions/exercises';
+import {startProgressReset} from '../actions/progress';
 import {openModal, closeModal} from '../actions/modal';
 import Portal from './Portal';
 import Modal from './Modal';
@@ -16,6 +17,7 @@ export class SettingPage extends React.Component{
 	}
 	onConfirmation = () => {
 		this.props.startResetWeights()
+		this.props.startProgressReset()
 		this.props.closeModal()
 		this.props.history.push('/');
 	}
@@ -52,6 +54,7 @@ export class SettingPage extends React.Component{
 const mapDispatchToProps = (dispatch) => ({
 	startEditWeights: (weight) => dispatch(startEditWeights(weight)),
 	startResetWeights: () => dispatch(startResetWeights()),
+	startProgressReset: () => dispatch(startProgressReset()),
 	openModal: (modal) => dispatch(openModal(modal)),
 	closeModal: (modal) => dispatch(closeModal(modal))
 })

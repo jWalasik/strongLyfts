@@ -1,5 +1,5 @@
 .header {
-  background: var(--static);
+  background: var(--neg);
   padding: $s-size;
 }
 
@@ -12,6 +12,6 @@
   color: var(--active);
 }
 .header-about {
-  color: var(--neg);
+  color: var(--static);
   margin: 0;
 }

@@ -5,6 +5,19 @@ export const setProgress = (progress) => ({
   progress
 })
 
+export const resetProgress = () => ({
+  type: 'RESET_PROGRESS'
+})
+
+export const startProgressReset = () => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid
+    return database.ref(`users/${uid}/progress/`)
+      .remove()
+      .then(() => dispatch(resetProgress()))
+  }
+}
+
 export const startProgressUpdate = (update) => {
   return (dispatch, getState) => {
     const uid = getState().auth.uid
@@ -22,7 +35,9 @@ export const startProgressUpdate = (update) => {
     const progressUpdate = progress.push(newEntry)
     return database.ref(`users/${uid}/progress/`)
       .push(newEntry)
-      .then(() => dispatch(setProgress( progressUpdate )))
+      .then(() => {
+        console.log('progress update: ', progress, progressUpdate, newEntry)
+        return dispatch(setProgress( progressUpdate ))})
   }
 }
 

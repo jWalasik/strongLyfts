@@ -6,11 +6,12 @@ import ExerciseList from './ExerciseList';
 import Page from './Page';
 
 const DashboardPage = ({isDarkMode, progress}) => {
+  console.log(progress)
   return (
     <Page>
       <div className="dashboard">
         <h2 className='dashboard-header'>
-          <span>Day {progress.day ? progress.day : 0}</span>
+          <span>Day {progress.length > 0 ? progress.length : 0}</span>
           <Link className='workout-link' to="/workout">Next Workout</Link>
         </h2>
         <Chart />
