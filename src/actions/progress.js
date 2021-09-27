@@ -35,9 +35,7 @@ export const startProgressUpdate = (update) => {
     const progressUpdate = progress.push(newEntry)
     return database.ref(`users/${uid}/progress/`)
       .push(newEntry)
-      .then(() => {
-        console.log('progress update: ', progress, progressUpdate, newEntry)
-        return dispatch(setProgress( progressUpdate ))})
+      .then(() => dispatch(setProgress( progressUpdate )))
   }
 }
 

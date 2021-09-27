@@ -6,7 +6,6 @@ import ExerciseList from './ExerciseList';
 import Page from './Page';
 
 const DashboardPage = ({isDarkMode, progress}) => {
-  console.log(progress)
   return (
     <Page>
       <div className="dashboard">

@@ -10,13 +10,13 @@ export default class Counter extends React.Component {
         this.mounted = true;
         this.interval = setInterval(() => {
             this.mounted ? 
-                this.count() : null
+                this.handleTimer() : null
         }, 1000)
     }
     componentWillUnmount(){
         this.mounted = false
     }
-    count(){
+    handleTimer(){
         if(this.state.seconds < 1){            
             clearInterval(this.interval)
             this.props.onClose()       
