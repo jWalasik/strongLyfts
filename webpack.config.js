@@ -11,7 +11,7 @@ if(process.env.NODE_ENV === 'test') {
 }
 
 module.exports = (env, args) => {
-  const isProduction = env === 'production'
+  const isProduction = args.mode === 'production'
 
   return {
     entry: ['./src/app.js'],
