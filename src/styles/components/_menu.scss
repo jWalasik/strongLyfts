@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: none;
 }
 
 .menu-icon {
@@ -22,4 +23,5 @@
   stroke: var(--active);
   width: 36px;
   height: 36px;
+  cursor: pointer;
 }

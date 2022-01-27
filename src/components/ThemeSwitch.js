@@ -19,7 +19,7 @@ export class ThemeSwitch extends React.Component {
         <label className='toggle-switch__label' htmlFor='darkmodeSwitch'>
 
         </label> */}
-        <svg className={`switch-icon ${this.props.isDarkMode ? 'sun' : 'moon'}`} viewBox="0 0 612.001 612.001" >
+        <svg className={`switch-icon menu-icon ${this.props.isDarkMode ? 'sun' : 'moon'}`} viewBox="0 0 612.001 612.001" >
           <defs>
             <path id='ray' d="M274.194,117.278h63.612c5.032,0,9.356-2.101,11.863-5.763c2.508-3.662,2.9-8.453,1.079-13.146L315.749,8.257
             c-2.789-7.184-7.305-8.256-9.749-8.256s-6.96,1.073-9.749,8.255l-35,90.114c-1.821,4.692-1.427,9.482,1.079,13.145

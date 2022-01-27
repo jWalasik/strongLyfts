@@ -26,7 +26,7 @@ export const Menu = ({startLogout, isDarkMode}) => (
 
     <ThemeSwitch />
 
-    <Exit className='menu-icon' onClick={startLogout} />
+    <button className='menu-button' onClick={startLogout}><Exit /></button>
   </nav>
 )
 

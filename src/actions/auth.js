@@ -1,4 +1,6 @@
-import { firebase, googleAuthProvider } from '../firebase/firebase';
+import { firebase, googleAuthProvider, emailAuthProvider } from '../firebase/firebase';
+
+const testUser = process.env.FIREBASE_TEST_USER
 
 export const login = (uid) => ({
   type: 'LOGIN',
@@ -11,12 +13,17 @@ export const startLogin = () => {
   };
 };
 
+export const startLoginTest = () => {
+  return () => {
+    return firebase.auth().signInWithEmailAndPassword(testUser, 'password');
+  };
+};
+
 export const logout = () => ({
   type: 'LOGOUT'
 });
 
 export const startLogout = () => {
-  console.log('logout')
   return () => {
     return firebase.auth().signOut();
   };

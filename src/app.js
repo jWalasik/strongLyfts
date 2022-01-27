@@ -10,7 +10,6 @@ import './styles/styles.scss';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
 import { startSetWeights } from './actions/exercises';
-import { toggleModal } from './actions/modal';
 import { fecthProgress } from './actions/progress';
 
 const store = configureStore();

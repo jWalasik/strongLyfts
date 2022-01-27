@@ -12,7 +12,6 @@ if(process.env.NODE_ENV === 'test') {
 
 module.exports = (env, args) => {
   const isProduction = args.mode === 'production'
-
   return {
     entry: ['./src/app.js'],
     output: {
@@ -20,6 +19,10 @@ module.exports = (env, args) => {
       filename: 'bundle.js'
     },
     devServer: {
+      static: {
+        directory: path.join(__dirname, 'public')
+      },
+      compress: true,
       port: 8080
     },
     module: {
@@ -50,7 +53,8 @@ module.exports = (env, args) => {
         'process.env.FIREBASE_DATABASE_URL': JSON.stringify(process.env.FIREBASE_DATABASE_URL),
         'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
         'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
-        'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID)
+        'process.env.FIREBASE_MESSAGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSAGING_SENDER_ID),
+        'process.env.FIREBASE_TEST_USER': JSON.stringify(process.env.FIREBASE_TEST_USER),
       })
     ],
     devtool: isProduction ? 'source-map' : 'inline-source-map'
